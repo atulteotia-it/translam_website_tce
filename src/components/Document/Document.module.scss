@@ -1,0 +1,43 @@
+.documents_section {
+  padding: 40px;
+  text-align: center;
+
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #222;
+  }
+
+  .documents_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .doc_card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 10px;
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    a {
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      color: #8a5a66;
+      display: block;
+
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+}

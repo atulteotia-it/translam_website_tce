@@ -1,0 +1,43 @@
+.facilitiesSection {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2rem;
+  color: #8a5a66;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.facility {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  h3 {
+    font-size: 1.3rem;
+    color: #8a5a66;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  }
+}
