@@ -50,6 +50,7 @@ export default function AdminLayout({ children, title }: AdminLayoutProps) {
     { name: 'Events', icon: '🎉', route: '/admin/events', subTabs: [] },
     { name: 'Gallery', icon: '📸', route: '/admin/gallery', subTabs: [] },
     { name: 'Contact Us', icon: '📞', route: '/admin/contact', subTabs: [] },
+    { name: 'Short News', icon: '📰', route: '/admin/short-news', subTabs: [] },
     { name: 'SMTP Settings', icon: '📧', route: '/admin/smtp', subTabs: [] }
   ];
 

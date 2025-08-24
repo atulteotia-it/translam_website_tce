@@ -1,6 +1,7 @@
 const express = require('express');
 const { Page, Image, HomePage, AdmissionPage, CoursesPage, EventsPage, ContactPage, SmtpSettings, DirectorDesk, Philosophy, HomeSlider, AboutGroup, OutstandingPlacements, Testimonial, WhyChooseUs, OurRecruiters, OurInstitutions, OurSuccess, Placement, Gallery, GallerySection, GalleryImage } = require('./models');
 const upload = require('./upload.js');
+const { pool } = require('./src/config/database');
 const router = express.Router();
 
 // Get all pages
@@ -1439,6 +1440,88 @@ router.delete('/gallery/images/:imageId', async (req, res) => {
     res.json({ success: true });
   } catch (error) {
     console.error('Error deleting image:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Short News Routes
+router.get('/short-news', async (req, res) => {
+  try {
+    const [rows] = await pool.query('SELECT * FROM ShortNews ORDER BY created_at DESC');
+    res.json({ shortNews: rows });
+  } catch (error) {
+    console.error('Error fetching short news:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Get active short news for frontend
+router.get('/short-news/active', async (req, res) => {
+  try {
+    const [rows] = await pool.query(
+      'SELECT id, title FROM ShortNews WHERE is_active = 1 ORDER BY created_at DESC'
+    );
+    res.json({ shortNews: rows });
+  } catch (error) {
+    console.error('Error fetching active short news:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+router.post('/short-news', async (req, res) => {
+  console.log('POST /short-news - Request received');
+  console.log('Request body:', req.body);
+  
+  try {
+    const { title, is_active } = req.body;
+    
+    if (!title) {
+      return res.status(400).json({ error: 'Title is required' });
+    }
+    
+    const [result] = await pool.query(
+      'INSERT INTO ShortNews (title, is_active) VALUES (?, ?)',
+      [title, is_active !== undefined ? is_active : 1]
+    );
+    
+    console.log('Insert result:', result);
+    
+    res.json({ 
+      message: 'Short news created successfully', 
+      id: result.insertId 
+    });
+  } catch (error) {
+    console.error('Error creating short news:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+router.put('/short-news/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { title, is_active } = req.body;
+    
+    await pool.query(
+      'UPDATE ShortNews SET title = ?, is_active = ? WHERE id = ?',
+      [title, is_active, id]
+    );
+    
+    res.json({ message: 'Short news updated successfully' });
+  } catch (error) {
+    console.error('Error updating short news:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+router.delete('/short-news/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    
+    await pool.query('DELETE FROM ShortNews WHERE id = ?', [id]);
+    
+    res.json({ message: 'Short news deleted successfully' });
+  } catch (error) {
+    console.error('Error deleting short news:', error);
     res.status(500).json({ error: error.message });
   }
 });
