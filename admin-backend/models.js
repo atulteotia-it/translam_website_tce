@@ -236,6 +236,12 @@ const GalleryImage = sequelize.define('GalleryImage', {
   sectionId: { type: DataTypes.INTEGER }
 });
 
+// Short News Model (for header ticker)
+const ShortNews = sequelize.define('ShortNews', {
+  title: { type: DataTypes.STRING, allowNull: false },
+  is_active: { type: DataTypes.BOOLEAN, defaultValue: true }
+});
+
 // Define relationships
 Page.hasMany(Image, { foreignKey: 'pageId' });
 Image.belongsTo(Page, { foreignKey: 'pageId' });
@@ -270,7 +276,8 @@ module.exports = {
   Placement,
   Gallery,
   GallerySection,
-  GalleryImage
+  GalleryImage,
+  ShortNews
 };
 
 // Uncomment for connection test

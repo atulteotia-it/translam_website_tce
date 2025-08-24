@@ -5,9 +5,9 @@ import AdminLayout from '@/components/AdminLayout';
 interface ShortNews {
   id: number;
   title: string;
-  is_active: boolean;
-  created_at: string;
-  updated_at: string;
+  is_active: boolean | number; // Backend returns 0/1 for boolean
+  createdAt: string;
+  updatedAt: string;
 }
 
 export default function ShortNewsPage() {
@@ -38,6 +38,8 @@ export default function ShortNewsPage() {
       if (response.ok) {
         const data = await response.json();
         setShortNewsList(data.shortNews || []);
+      } else {
+        setError('Failed to fetch short news');
       }
     } catch (error) {
       setError('Failed to fetch short news');
@@ -84,7 +86,7 @@ export default function ShortNewsPage() {
     setEditingId(news.id);
     setFormData({
       title: news.title,
-      is_active: news.is_active
+      is_active: Boolean(news.is_active) // Convert 0/1 to boolean
     });
     setShowAddForm(true);
   };
@@ -345,10 +347,10 @@ export default function ShortNewsPage() {
                         borderRadius: '12px',
                         fontSize: '12px',
                         fontWeight: '500',
-                        backgroundColor: news.is_active ? '#d1fae5' : '#fee2e2',
-                        color: news.is_active ? '#065f46' : '#991b1b'
+                        backgroundColor: Boolean(news.is_active) ? '#d1fae5' : '#fee2e2',
+                        color: Boolean(news.is_active) ? '#065f46' : '#991b1b'
                       }}>
-                        {news.is_active ? 'Active' : 'Inactive'}
+                        {Boolean(news.is_active) ? 'Active' : 'Inactive'}
                       </span>
                     </td>
                     <td style={{

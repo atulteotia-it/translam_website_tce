@@ -6,6 +6,7 @@ import { pgProgram } from '@/app/apiData/pgProgram';
 import { ugProgram } from '@/app/apiData/ugProgram';
 import { diplomaProgram } from '@/app/apiData/diplomaProgram';
 import Marquee from 'react-fast-marquee';
+import ShortNewsTicker from '../../ShortNewsTicker';
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -40,10 +41,8 @@ function Header() {
     <header className={scrolled ? styles.scrollHeader : styles.stickyHeader}>
 
       <div className={styles.marqueeContainer}>
-        <Marquee speed={50} gradient={false}>
-          Welcome to our website! Explore our courses and programs.
-        </Marquee>
-        </div>
+        <ShortNewsTicker />
+      </div>
       <div className={styles.containerFluid}>
         <div className={styles.header}>
           <div className={styles.logo}>

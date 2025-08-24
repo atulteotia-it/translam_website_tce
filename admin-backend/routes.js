@@ -1447,7 +1447,7 @@ router.delete('/gallery/images/:imageId', async (req, res) => {
 // Short News Routes
 router.get('/short-news', async (req, res) => {
   try {
-    const [rows] = await pool.query('SELECT * FROM ShortNews ORDER BY created_at DESC');
+    const [rows] = await pool.query('SELECT * FROM ShortNews ORDER BY createdAt DESC');
     res.json({ shortNews: rows });
   } catch (error) {
     console.error('Error fetching short news:', error);
@@ -1459,7 +1459,7 @@ router.get('/short-news', async (req, res) => {
 router.get('/short-news/active', async (req, res) => {
   try {
     const [rows] = await pool.query(
-      'SELECT id, title FROM ShortNews WHERE is_active = 1 ORDER BY created_at DESC'
+      'SELECT id, title FROM ShortNews WHERE is_active = 1 ORDER BY createdAt DESC'
     );
     res.json({ shortNews: rows });
   } catch (error) {
@@ -1486,9 +1486,12 @@ router.post('/short-news', async (req, res) => {
     
     console.log('Insert result:', result);
     
+    // Fetch the created news item to return it
+    const [rows] = await pool.query('SELECT * FROM ShortNews WHERE id = ?', [result.insertId]);
+    
     res.json({ 
-      message: 'Short news created successfully', 
-      id: result.insertId 
+      news: rows[0],
+      alert: { type: 'success', message: 'Short news created successfully!' }
     });
   } catch (error) {
     console.error('Error creating short news:', error);
@@ -1502,11 +1505,17 @@ router.put('/short-news/:id', async (req, res) => {
     const { title, is_active } = req.body;
     
     await pool.query(
-      'UPDATE ShortNews SET title = ?, is_active = ? WHERE id = ?',
-      [title, is_active, id]
+      'UPDATE ShortNews SET title = ?, is_active = ?, updatedAt = ? WHERE id = ?',
+      [title, is_active, new Date(), id]
     );
     
-    res.json({ message: 'Short news updated successfully' });
+    // Fetch the updated news item
+    const [rows] = await pool.query('SELECT * FROM ShortNews WHERE id = ?', [id]);
+    
+    res.json({ 
+      news: rows[0],
+      alert: { type: 'success', message: 'Short news updated successfully!' }
+    });
   } catch (error) {
     console.error('Error updating short news:', error);
     res.status(500).json({ error: error.message });
