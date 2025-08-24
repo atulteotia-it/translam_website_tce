@@ -118,23 +118,7 @@ function Home() {
             <span>&#8592;</span>
           </button>
           <div className={styles.heroBg}>
-            <div className={styles.heroLeft}>
-              <motion.h1 className={styles.heroTitle}
-                initial={{ opacity: 0, x: -40 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.7 }}
-              >
-                {heroSlides[heroIdx].title}
-              </motion.h1>
-              <motion.p className={styles.heroSubtitle}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.7, delay: 0.2 }}
-              >
-                {heroSlides[heroIdx].subtitle}
-              </motion.p>
-
-            </div>
+          
             <motion.div className={styles.heroRight}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}

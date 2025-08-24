@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from '../../components/shared/Header/Header';
 import Footer from '../../components/shared/Footer/Footer';
-import EventsGallery from '../../components/Events/EventsGallery';
+import Gallery from '../../components/Gallery/Gallery';
 
-export default function EventsGalleryPage() {
+export default function GalleryPage() {
   return (
     <>
       <Header />
-      <EventsGallery />
+      <Gallery />
       <Footer />
     </>
   );
