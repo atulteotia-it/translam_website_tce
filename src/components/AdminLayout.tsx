@@ -37,7 +37,7 @@ export default function AdminLayout({ children, title }: AdminLayoutProps) {
       subTabs: [
         { name: 'About Group', route: '/admin/aboutus/about-group' },
         { name: 'Our Philosophy', route: '/admin/aboutus/our-philosophy' },
-        { name: 'Directors Desk', route: '/admin/aboutus/director-desk' }
+        // { name: 'Directors Desk', route: '/admin/aboutus/director-desk' }
       ]
     },
     { name: 'Admission', icon: '📝', route: '/admin/admission', subTabs: [] },

@@ -11,6 +11,8 @@ function Footer() {
         <h2 className={styles.title}>TRANSLAM GROUP OF INSTITUTIONS</h2>
         
         <div className={styles.links}>
+          <a href="/gallery">Gallery</a>
+          <span>|</span>
           <a href="/admission">Apply Now</a>
           <span>|</span>
           <a href="/pdfs/antiragging.pdf" target='_blank'>Anti Ragging Notification</a>

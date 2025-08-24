@@ -62,9 +62,10 @@ function About() {
             </div>
             <div className={styles.content}>
               <h3>{item.title}</h3>
-              <div dangerouslySetInnerHTML={{ __html: item.content1 }} />
-              {item.content2 && <div dangerouslySetInnerHTML={{ __html: item.content2 }} />}
-              {item.content3 && <div dangerouslySetInnerHTML={{ __html: item.content3 }} />}
+              
+              <p><div dangerouslySetInnerHTML={{ __html: item.content1 }} /></p>
+              {item.content2 && <p dangerouslySetInnerHTML={{ __html: item.content2 }} />}
+              {item.content3 && <p dangerouslySetInnerHTML={{ __html: item.content3 }} />}
             </div>
           </div>
         ))}

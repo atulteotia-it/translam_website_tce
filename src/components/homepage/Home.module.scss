@@ -5,7 +5,7 @@
 
 .successSection {
   text-align: center;
-  margin: 48px 0 100px 0;
+  margin: 20px 0 100px 0;
 }
 
 .sectionTitle {
@@ -22,7 +22,7 @@
 .successDesc {
   color: #444;
   font-size: 1.05rem;
-  max-width: 600px;
+  max-width: 1000px;
   margin: 0 auto 32px auto;
 }
 
@@ -640,6 +640,7 @@
   padding: 15px 40px;
   font-size: 1.1rem;
   font-weight: 600;
+  margin-top: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
 
@@ -716,6 +717,9 @@
   background-color: #eaf3fc;
   padding: 40px 20px;
   margin: 64px 0 0 0;
+  .sectionTitle span{
+    padding-right: 8px;
+  }
 }
 
 .whyChooseContent {
@@ -2020,7 +2024,7 @@
   padding: 150px 0 100px 0;
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
-  top: -100px;
+  top: -150px;
 
   @media (max-width: 1024px) {
     padding: 120px 20px 80px;
@@ -2039,10 +2043,10 @@
 }
 
 .heroBg {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
+  max-width: 100%;
   margin: 0 auto;
   position: relative;
 
@@ -2108,6 +2112,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 9;
+   
 }
 
 .heroRight {
@@ -2124,14 +2130,14 @@
 }
 
 .heroImg {
-  width: 430px;
+  width: 100%;
   height: 600px;
   object-fit: cover;
   border-radius: 0 0 32px 32px;
   position: relative;
   z-index: 1;
   margin-bottom: -70px;
-
+clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
   @media (max-width: 1024px) {
     width: 280px;
     height: 450px;
@@ -2223,6 +2229,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 9;
 }
 
 // Media Queries
@@ -2575,7 +2582,7 @@
   }
 
   .heroImg {
-    width: 280px;
+    width: 100%;
     height: 400px;
   }
 
@@ -3043,8 +3050,9 @@
   .heroBg {
     flex-direction: column;
     gap: 30px;
-    padding: 0 15px;
+    padding: 0 0;
   }
+  
 
   .heroLeft {
     padding-left: 0;
@@ -3072,8 +3080,8 @@
   }
 
   .heroImg {
-    width: 240px;
-    height: 350px;
+    width: 100%;
+    height: 240px;
     margin-bottom: 0px;
   }
 

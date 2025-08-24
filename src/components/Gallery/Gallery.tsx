@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import styles from './Events.module.scss';
+import styles from './Galery.module.scss';
 import CommonBanner from '../CommonSection/CommonBanner';
 
 interface EventImage {
@@ -26,7 +26,7 @@ interface EventsData {
   sections: EventSection[];
 }
 
-function EventsGallery() {
+function Gallery() {
   const [eventsData, setEventsData] = useState<EventsData | null>(null);
   const [loading, setLoading] = useState(true);
   const [modalIndex, setModalIndex] = useState<{ sectionIndex: number; imageIndex: number } | null>(null);
@@ -215,4 +215,4 @@ function EventsGallery() {
   );
 }
 
-export default EventsGallery;
+export default Gallery;

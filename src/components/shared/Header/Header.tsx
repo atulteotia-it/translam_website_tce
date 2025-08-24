@@ -108,7 +108,7 @@ function Header() {
               <li><Link href="/placement">Placements</Link></li>
               <li><Link href="/resources">Resources</Link></li>
               <li><Link href="/documents">Documents</Link></li>
-              <li><Link href="/events-gallery">Events/Galleries</Link></li>
+              <li><Link href="/events">Events</Link></li>
               <li><Link href="/contact">Contact Us</Link></li>
             </ul>
 
