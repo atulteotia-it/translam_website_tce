@@ -301,7 +301,7 @@ CREATE TABLE `EventsPages` (
 
 LOCK TABLES `EventsPages` WRITE;
 /*!40000 ALTER TABLE `EventsPages` DISABLE KEYS */;
-INSERT INTO `EventsPages` VALUES (1,'events','Gallery','<p>This is test content.</p>','2025-08-08 05:50:36','2025-08-24 08:40:12','/uploads/1755432226791-commonBanner.png','[\"/uploads/1754635723633-event1.png\",\"/uploads/1754635758880-event1.png\",\"/uploads/1754635806679-event1.png\",\"/uploads/1754635830928-event1.png\",\"/uploads/1754637709700-event1.png\",\"/uploads/1754637731201-event1.png\"]','[{\"id\":\"1755982000804\",\"sectionName\":\"Gallery\",\"sectionTitle\":\"Event Gallery\",\"images\":[{\"id\":\"1755982000804\",\"url\":\"/uploads/1754635723633-event1.png\",\"title\":\"Image 1\",\"description\":\"\"},{\"id\":\"1755982000805\",\"url\":\"/uploads/1754635758880-event1.png\",\"title\":\"Image 2\",\"description\":\"\"},{\"id\":\"1755982000806\",\"url\":\"/uploads/1754635806679-event1.png\",\"title\":\"Image 3\",\"description\":\"\"},{\"id\":\"1755982000807\",\"url\":\"/uploads/1754635830928-event1.png\",\"title\":\"Image 4\",\"description\":\"\"},{\"id\":\"1755982000808\",\"url\":\"/uploads/1754637709700-event1.png\",\"title\":\"Image 5\",\"description\":\"\"}]},{\"id\":\"1755982177960\",\"sectionName\":\"Section2\",\"images\":[{\"id\":\"1755982188495.7285\",\"url\":\"/uploads/1755982188484-1754635723633-event1.webp\",\"title\":\"\",\"description\":\"\"},{\"id\":\"1755982202216.1975\",\"url\":\"/uploads/1755982202208-1754635723633-event1.webp\",\"title\":\"\",\"description\":\"\"}]},{\"id\":\"1756024788696\",\"sectionName\":\"Section3\",\"sectionTitle\":\"Test\",\"images\":[{\"id\":\"1756024812513.8276\",\"url\":\"/uploads/1756024812503-1755982188484-1754635723633-event1.webp\",\"title\":\"Test Image Title\",\"description\":\"\"}]}]');
+INSERT INTO `EventsPages` VALUES (1,'events','','<p>This is test content.</p>','2025-08-08 05:50:36','2025-08-24 17:07:30','/uploads/1755432226791-commonBanner.png','[\"/uploads/1754635723633-event1.png\",\"/uploads/1754635758880-event1.png\",\"/uploads/1754635806679-event1.png\",\"/uploads/1754635830928-event1.png\",\"/uploads/1754637709700-event1.png\",\"/uploads/1754637731201-event1.png\"]','[{\"id\":\"1755982000804\",\"sectionName\":\"Gallery\",\"sectionTitle\":\"Event Gallery\",\"images\":[{\"id\":\"1755982000804\",\"url\":\"/uploads/1754635723633-event1.png\",\"title\":\"Image 1\",\"description\":\"\"},{\"id\":\"1755982000805\",\"url\":\"/uploads/1754635758880-event1.png\",\"title\":\"Image 2\",\"description\":\"\"},{\"id\":\"1755982000806\",\"url\":\"/uploads/1754635806679-event1.png\",\"title\":\"Image 3\",\"description\":\"\"},{\"id\":\"1755982000807\",\"url\":\"/uploads/1754635830928-event1.png\",\"title\":\"Image 4\",\"description\":\"\"},{\"id\":\"1755982000808\",\"url\":\"/uploads/1754637709700-event1.png\",\"title\":\"Image 5\",\"description\":\"\"}]},{\"id\":\"1755982177960\",\"sectionName\":\"Section2\",\"images\":[{\"id\":\"1755982188495.7285\",\"url\":\"/uploads/1755982188484-1754635723633-event1.webp\",\"title\":\"\",\"description\":\"\"},{\"id\":\"1755982202216.1975\",\"url\":\"/uploads/1755982202208-1754635723633-event1.webp\",\"title\":\"\",\"description\":\"\"}]},{\"id\":\"1756024788696\",\"sectionName\":\"Section3\",\"sectionTitle\":\"Test\",\"images\":[{\"id\":\"1756024812513.8276\",\"url\":\"/uploads/1756024812503-1755982188484-1754635723633-event1.webp\",\"title\":\"Test Image Title\",\"description\":\"\"}]}]');
 /*!40000 ALTER TABLE `EventsPages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -328,7 +328,7 @@ CREATE TABLE `Galleries` (
 
 LOCK TABLES `Galleries` WRITE;
 /*!40000 ALTER TABLE `Galleries` DISABLE KEYS */;
-INSERT INTO `Galleries` VALUES (1,'/uploads/1755980483114-1755432226791-commonBanner.png','Gallery hhggh','2025-08-23 20:18:16','2025-08-23 20:21:23');
+INSERT INTO `Galleries` VALUES (1,'/uploads/1756055789517-1755432226791-commonBanner.webp','Gallery','2025-08-23 20:18:16','2025-08-24 17:16:29');
 /*!40000 ALTER TABLE `Galleries` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -350,7 +350,7 @@ CREATE TABLE `GalleryImages` (
   PRIMARY KEY (`id`),
   KEY `sectionId` (`sectionId`),
   CONSTRAINT `galleryimages_ibfk_1` FOREIGN KEY (`sectionId`) REFERENCES `GallerySections` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -359,7 +359,7 @@ CREATE TABLE `GalleryImages` (
 
 LOCK TABLES `GalleryImages` WRITE;
 /*!40000 ALTER TABLE `GalleryImages` DISABLE KEYS */;
-INSERT INTO `GalleryImages` VALUES (1,'/uploads/1755980367292-sdf.png','hgh','dfdffd ghhghgh',2,'2025-08-23 20:19:27','2025-08-23 20:19:27'),(3,'/uploads/1755980508883-1755432226791-commonBanner.png','','',3,'2025-08-23 20:21:48','2025-08-23 20:21:48');
+INSERT INTO `GalleryImages` VALUES (1,'/uploads/1755980367292-sdf.png','hgh','dfdffd ghhghgh',2,'2025-08-23 20:19:27','2025-08-23 20:19:27'),(3,'/uploads/1755980508883-1755432226791-commonBanner.png','','',3,'2025-08-23 20:21:48','2025-08-23 20:21:48'),(4,'/uploads/1756056051068-dsfds.png','','',3,'2025-08-24 17:20:51','2025-08-24 17:20:51');
 /*!40000 ALTER TABLE `GalleryImages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -725,10 +725,10 @@ CREATE TABLE `ShortNews` (
   `id` int NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `is_active` tinyint(1) DEFAULT '1',
-  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `createdAt` datetime DEFAULT CURRENT_TIMESTAMP,
+  `updatedAt` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -737,6 +737,7 @@ CREATE TABLE `ShortNews` (
 
 LOCK TABLES `ShortNews` WRITE;
 /*!40000 ALTER TABLE `ShortNews` DISABLE KEYS */;
+INSERT INTO `ShortNews` VALUES (5,' Welcome to our website! Explore our courses and programs.',1,'2025-08-24 22:17:58','2025-08-24 22:25:13');
 /*!40000 ALTER TABLE `ShortNews` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -847,4 +848,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-08-24 14:36:38
+-- Dump completed on 2025-08-24 22:57:04
