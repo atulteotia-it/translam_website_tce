@@ -223,7 +223,7 @@ function HomeSliderManagement() {
               {editingSlider ? 'Edit Slider' : 'Add New Slider'}
             </h4>
             <form onSubmit={handleSubmit}>
-              <div style={{ marginBottom: '16px' }}>
+              {/* <div style={{ marginBottom: '16px' }}>
                 <label style={{
                   display: 'block',
                   fontSize: '14px',
@@ -273,7 +273,7 @@ function HomeSliderManagement() {
                   }}
                   placeholder="e.g., Shaping Futures with Excellence in Education Since 1987"
                 />
-              </div>
+              </div> */}
 
               <div style={{ marginBottom: '16px' }}>
                 <label style={{

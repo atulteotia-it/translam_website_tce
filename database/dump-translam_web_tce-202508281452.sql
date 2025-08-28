@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 9.0.1, for macos14 (arm64)
+-- MySQL dump 10.13  Distrib 9.4.0, for macos15.4 (arm64)
 --
--- Host: localhost    Database: transl_web_tce
+-- Host: localhost    Database: translam_web_tce
 -- ------------------------------------------------------
--- Server version	9.0.1
+-- Server version	8.0.41
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -468,7 +468,7 @@ CREATE TABLE `HomeSliders` (
 
 LOCK TABLES `HomeSliders` WRITE;
 /*!40000 ALTER TABLE `HomeSliders` DISABLE KEYS */;
-INSERT INTO `HomeSliders` VALUES (7,'Translam College of Education','Translam College of Education is a premier institution dedicated to nurturing skilled and compassionate educators for the future.','/uploads/1754847521468-test-image.webp',0,1,'2025-08-10 17:47:13','2025-08-17 08:05:02'),(8,'Translam College of Education','Translam College of Education is a premier institution dedicated to nurturing skilled and compassionate educators for the future.','/uploads/1755417857935-student-group.jpg',1,1,'2025-08-17 08:04:20','2025-08-17 08:05:39');
+INSERT INTO `HomeSliders` VALUES (7,'Translam College of Education','Translam College of Education is a premier institution dedicated to nurturing skilled and compassionate educators for the future.','/uploads/1756371894221-tce-college.jpg',0,1,'2025-08-10 17:47:13','2025-08-28 09:04:56'),(8,'Translam College of Education','Translam College of Education is a premier institution dedicated to nurturing skilled and compassionate educators for the future.','/uploads/1755417857935-student-group.jpg',1,1,'2025-08-17 08:04:20','2025-08-17 08:05:39');
 /*!40000 ALTER TABLE `HomeSliders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -584,7 +584,7 @@ CREATE TABLE `OurSuccesses` (
 
 LOCK TABLES `OurSuccesses` WRITE;
 /*!40000 ALTER TABLE `OurSuccesses` DISABLE KEYS */;
-INSERT INTO `OurSuccesses` VALUES (1,'Our Success','','<p style=\"text-align: justify;\"><span style=\"color: rgb(54, 53, 53);\">At Translam College of Education</span>, success is measured by the achievements of our students and the positive impact they create in society. Over the years, we have built a legacy of academic excellence, innovative teaching methodologies, and strong industry connections. Our alumni are making a mark in the field of education across schools, colleges, and educational institutions nationwide. With a commitment to quality, values, and continuous growth, we take pride in shaping educators who inspire, lead, and transform lives.</p>','[{\"graduates\":\"6000+\",\"graduatesLabel\":\"Successful Graduates \",\"alumni\":\"16000+\",\"alumniLabel\":\"Alumni \",\"yearsExcellence\":\"40\",\"yearsExcellenceLabel\":\"Of Educational Excellence \",\"recruiters\":\"101+\",\"recruitersLabel\":\"Recruiters\",\"placementRate\":\"92%\",\"placementRateLabel\":\"Placement Success Rate \"}]','2025-08-10 08:16:54','2025-08-23 21:09:53');
+INSERT INTO `OurSuccesses` VALUES (1,'Our Success','','<p style=\"text-align: center;\"><span style=\"color: rgb(54, 53, 53);\">At Translam College of Education</span>, success is measured by the achievements of our students and the positive impact they create in society. Over the years, we have built a legacy of academic excellence, innovative teaching methodologies, and strong industry connections. Our alumni are making a mark in the field of education across schools, colleges, and educational institutions nationwide. With a commitment to quality, values, and continuous growth, we take pride in shaping educators who inspire, lead, and transform lives.</p>','[{\"graduates\":\"6000+\",\"graduatesLabel\":\"Successful Graduates \",\"alumni\":\"16000+\",\"alumniLabel\":\"Alumni \",\"yearsExcellence\":\"40\",\"yearsExcellenceLabel\":\"Of Educational Excellence \",\"recruiters\":\"101+\",\"recruitersLabel\":\"Recruiters\",\"placementRate\":\"92%\",\"placementRateLabel\":\"Placement Success Rate \"}]','2025-08-10 08:16:54','2025-08-28 09:20:48');
 /*!40000 ALTER TABLE `OurSuccesses` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -737,7 +737,7 @@ CREATE TABLE `ShortNews` (
 
 LOCK TABLES `ShortNews` WRITE;
 /*!40000 ALTER TABLE `ShortNews` DISABLE KEYS */;
-INSERT INTO `ShortNews` VALUES (5,' Welcome to our website! Explore our courses and programs.',1,'2025-08-24 22:17:58','2025-08-24 22:25:13');
+INSERT INTO `ShortNews` VALUES (5,' Welcome to our website! Explore our courses and programs.',1,'2025-08-24 22:17:58','2025-08-25 19:55:48');
 /*!40000 ALTER TABLE `ShortNews` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -836,7 +836,10 @@ INSERT INTO `WhyChooseUs` VALUES (1,'Why Choose US ?','','<p>Everything you can 
 UNLOCK TABLES;
 
 --
--- Dumping routines for database 'transl_web_tce'
+-- Dumping routines for database 'translam_web_tce'
+--
+--
+-- WARNING: can't read the INFORMATION_SCHEMA.libraries table. It's most probably an old server 8.0.41.
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -848,4 +851,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-08-24 22:57:04
+-- Dump completed on 2025-08-28 14:52:11

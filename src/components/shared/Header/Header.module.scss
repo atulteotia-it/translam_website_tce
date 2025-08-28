@@ -216,7 +216,13 @@
   }
 
   .nav ul li a {
-    font-size: 0.95rem;
+    font-size: 12px;
+  }
+  .dropdown {
+    top: 5px;
+    .dropdownToggle {
+      font-size: 12px;
+    }
   }
 }
 
