@@ -554,3 +554,26 @@
   position: relative;
   z-index: 9;
 }
+
+
+.active {
+  // color: #fff !important;
+  border-bottom: 2px solid #8a5a66 !important;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(138, 90, 102, 0.08);
+}
+
+.nav ul li.active a,
+.nav ul li a.active {
+  font-weight: 600;
+}
+
+.dropdownMenu li.active a,
+.dropdownMenu li a.active {
+  font-weight: 600;
+}
+
+.submenu li.active a,
+.submenu li a.active {
+  font-weight: 600;
+}

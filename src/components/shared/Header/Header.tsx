@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import styles from './Header.module.scss';
 import { pgProgram } from '@/app/apiData/pgProgram';
 import { ugProgram } from '@/app/apiData/ugProgram';
@@ -13,6 +14,7 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [openSubmenu, setOpenSubmenu] = useState(null); // for multi-level
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,8 +65,8 @@ function Header() {
 
           <nav className={menuOpen ? styles.navMobile : styles.nav}>
             <ul>
-              <li><Link href="/">Home</Link></li>
-              <li className={styles.dropdown}>
+              <li className={pathname === '/' ? styles.active : ''}><Link href="/">Home</Link></li>
+              <li className={styles.dropdown + ' ' + (pathname.startsWith('/about') || pathname.startsWith('/philosophy') ? styles.active : '')}>
                 <span
                   className={styles.dropdownToggle}
                   onClick={() => toggleDropdown("aboutUs")}
@@ -79,10 +81,10 @@ function Header() {
                 </ul>
               </li>
              
-              <li><Link href="/admission">Admission</Link></li>
+              <li className={pathname.startsWith('/admission') ? styles.active : ''}><Link href="/admission">Admission</Link></li>
 
               {/* Courses Dropdown (Multi-Level) */}
-              <li className={styles.dropdown}>
+              <li className={styles.dropdown + ' ' + (pathname.startsWith('/courses') ? styles.active : '')}>
                 <span
                   className={styles.dropdownToggle}
                   onClick={() => toggleDropdown("courses")}
@@ -104,11 +106,11 @@ function Header() {
                 
                 </ul>
               </li>
-              <li><Link href="/placement">Placements</Link></li>
-              <li><Link href="/resources">Resources</Link></li>
-              <li><Link href="/documents">Documents</Link></li>
-              <li><Link href="/events">Events</Link></li>
-              <li><Link href="/contact">Contact Us</Link></li>
+              <li className={pathname.startsWith('/placement') ? styles.active : ''}><Link href="/placement">Placements</Link></li>
+              <li className={pathname.startsWith('/resources') ? styles.active : ''}><Link href="/resources">Resources</Link></li>
+              <li className={pathname.startsWith('/documents') ? styles.active : ''}><Link href="/documents">Documents</Link></li>
+              <li className={pathname.startsWith('/events') ? styles.active : ''}><Link href="/events">Events</Link></li>
+              <li className={pathname.startsWith('/contact') ? styles.active : ''}><Link href="/contact">Contact Us</Link></li>
             </ul>
 
               <div className={styles.loginBtnContainer}>          

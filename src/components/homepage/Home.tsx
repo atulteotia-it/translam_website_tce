@@ -61,6 +61,15 @@ function Home() {
     }
   ];
   const [heroIdx, setHeroIdx] = useState(0);
+
+  // Autoplay for hero slider
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setHeroIdx((prev) => (prev + 1) % heroSlides.length);
+    }, 4000); // 4 seconds
+    return () => clearTimeout(timer);
+  }, [heroIdx, heroSlides.length]);
+
   const handlePrevHero = () => {
     setHeroIdx((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
   };

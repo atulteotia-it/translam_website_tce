@@ -28,13 +28,13 @@ export default function UgProgramDetail({ params }: Params) {
 
   return (
     <>
-     <Header />
-        <CommonBanner title={course.title} />
-          
-            <section className={styles.articleContainer}>
-                  <div className='container'>
-                <div className={styles.content}>
-                    {/* <h1 className={styles.title}>
+      <Header />
+      <CommonBanner title={course.title} />
+
+      <section className={styles.articleContainer}>
+        <div className='container'>
+          <div className={styles.content}>
+            {/* <h1 className={styles.title}>
                       {course.title}
                     </h1>
 
@@ -45,7 +45,7 @@ export default function UgProgramDetail({ params }: Params) {
                         </p>
                     </div> */}
 
-                   <div className="w-full md:w-1/2">
+            <div className="w-full md:w-1/2">
               <h2 className="">{course.titleFull}</h2>
               <p className=""><strong>Duration:</strong> {course.duration}</p>
               <p className=""><strong>Fees:</strong> {course.fees}</p>
@@ -69,11 +69,11 @@ export default function UgProgramDetail({ params }: Params) {
               <p className="text-gray-600">{course.outcome}</p>
             </div>
           </div>
-                </div>
-            </section>
-           
-       
-    
+        </div>
+      </section>
+
+
+
       <Footer />
     </>
   );
