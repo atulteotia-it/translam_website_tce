@@ -49,7 +49,7 @@ function Header() {
         <div className={styles.header}>
           <div className={styles.logo}>
             <Link href="/">
-              <img src="/images/logo-tce.png" alt="Logo" />
+              <img src="/images/tce-logo.png" alt="Logo" />
             </Link>
           </div>
 
